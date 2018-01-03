@@ -1,6 +1,6 @@
 #Exercise 2.3
 h = input('Enter Hours: ')
-r = input('Enter Rate: ')
-t = float(h) * float(r)
+ra = input('Enter Rate: ')
+t = float(h) * float(ra)
 r = round(t)
 print('Pay:', r)
