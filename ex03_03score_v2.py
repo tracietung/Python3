@@ -15,7 +15,10 @@ try:
         print('D')
     elif 0.5 <= scr < 0.6:
         print('F')
-    else:
+    elif 0 <= scr <0.5:
         print('Bad score')
+    else:
+        print('Out of range')
+
 except:
-    exit('Bad score')
+    exit('Not a sufficient score')
