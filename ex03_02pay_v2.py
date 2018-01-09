@@ -9,5 +9,6 @@ try:
         basic_pay = maxi_hours * (rate)
         over_pay = (hours - maxi_hours) * 1.5 * (rate)
         pay = basic_pay + over_pay
-    print('Pay:', pay)
+        print('Pay:', pay)
 except:
+    exit('Error, please enter numeric input')
