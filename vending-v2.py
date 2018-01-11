@@ -33,8 +33,8 @@ if __name__ == '__main__':
 
     quarter = validate_inp('How many quarters do you want to insert? ')
     onedollar = validate_inp('How many one-dollar bills do you want to insert? ')
-    money = (quarter * 0.25 + onedollar) - value * amount
-    if money < total:
+    changes = (quarter * 0.25 + onedollar) - total
+    if changes < 0:
         print('Not a sufficient amount')
     else:
-        print('Yout changes:', money)
+        print('Your changes:', changes)
