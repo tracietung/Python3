@@ -17,19 +17,19 @@ while True:
         print('Invalid value')
         continue
     mylist.append(finp)
-    count = count + 1
-print('You have entered {} numbers; they are {}' .format(count, mylist))
+    count += 1
 
-x_largest = None
-x_smallest = None
-for itervar in mylist:
-    if x_largest is None or itervar > x_largest :
-        x_largest = itervar
-    elif x_smallest is None or itervar < x_smallest:
-        x_smallest = itervar
+print('You have entered {} numbers; they are {}'.format(count, mylist))
+print('You have entered {} numbers; they are {}'.format(len(mylist), mylist))  # built-in function
 
-print('Largest:', x_largest, 'Smallest:', x_smallest)
+x_largest = mylist[0]
+x_smallest = mylist[0]
 
-# largest = max(mylist)
-# smallest = min(mylist)
-# print('Max:', largest, 'Min:', smallest)
+for item in mylist:
+    if item > x_largest:
+        x_largest = item
+    elif item < x_smallest:
+        x_smallest = item
+
+print('Largest: {} Smallest: {}'.format(x_largest, x_smallest))
+print('Largest: {} Smallest: {}'.format(max(mylist), min(mylist)))  # built-in function
