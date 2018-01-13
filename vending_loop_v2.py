@@ -42,12 +42,13 @@ while True:
             print('Enter ".05", ".10", ".25" or "1" only')
             continue
     sumup = sumup + fmoney
-    print(sumup)
-    if sumup >= total:
+    rounded_sum = round(sumup, 2)
+    print(rounded_sum)
+    if rounded_sum >= total:
         break
 
 # give changes
-changes = sumup - total
+changes = rounded_sum - total
 
 quarter = changes // .25
 quarter_remain = changes % .25
