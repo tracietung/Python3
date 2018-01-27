@@ -39,9 +39,5 @@ for i in emails:
     new_count+=1
 new_emails.sort()
 print('There were {} senders in the file. They are: '.format(new_count))
-final_list = oneline(new_emails)
-print(final_list)
-
-
-#for s in new_emails:
-#    print(s)
+for item in new_emails:
+    print(item)
