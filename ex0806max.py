@@ -7,7 +7,7 @@
 mylist = list()
 while True:
     inp = input('Enter a number each time, when you finish, enter "done". Enter a number: ')
-    if inp == 'done': break
+    if inp == 'done' and len(mylist) > 0: break
     try:
         message = float(inp)
         mylist.append(message)
