@@ -14,11 +14,11 @@ except:
     exit()
 
 import string
-
 counts = dict()
 for line in fhand:
-    line = line.translate(str.maketrans('', '', string.punctuation))
-    line = line.strip().lower()
+    line = line.translate(str.maketrans('', '', string.punctuation)) # delete punctuation
+    line = line.translate(str.maketrans('', '', string.digits))
+    line = line.rstrip().lower()
     line = line.split()
     for words in line:
         word = list(words)
