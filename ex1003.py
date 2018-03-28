@@ -13,7 +13,7 @@ except:
     print('File cannot be open', fname)
     exit()
 
-import string
+import string  # import package/module
 counts = dict()
 for line in fhand:
     line = line.translate(str.maketrans('', '', string.punctuation)) # delete punctuation
@@ -35,4 +35,36 @@ for l, freq in counts.items():
 lst = sorted(lst, reverse=True)
 
 for freq, l in lst:
+    print(freq, l)
+
+
+## Method 2: Regular Expressions
+## printing top 10:
+
+import re
+
+fname = input('Enter a file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be open', fname)
+    exit()
+
+counts = dict()
+for line in fhand:
+    line = line.rstrip().lower()
+    letters = re.findall('[a-z]', line)
+    for singleletter in letters:
+        if singleletter not in counts:
+            counts[singleletter] = 1
+        else:
+            counts[singleletter] += 1
+
+lst = list()
+for l, freq in counts.items():
+    lst.append((freq, l))
+
+lst = sorted(lst, reverse=True)
+
+for freq, l in lst[:10]:
     print(freq, l)
